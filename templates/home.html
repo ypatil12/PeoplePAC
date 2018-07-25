@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PeoplePAC</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static '/css/scrolling.css' %}">
+  </head>
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container-fluid">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Pricing</a>
+            </li>
+          </ul>
+        </div>
+        {% if user.is_authenticated %}
+        <a href="{% url 'accounts:logout' %}" class="btn btn-outline-light my-2 my-sm-0">Logout</a>
+        <a href="{% url 'campaigns:clienthome' %}" class="btn btn-outline-light my-2 my-sm-0">Dashboard</a>
+        {% else %}
+        <form class="my-2 my-lg-0">
+          <a href="{% url 'accounts:login' %}" class="btn btn-outline-light my-2 my-sm-0">Sign In</a>
+          <a href="{% url 'accounts:signup' %}" class="btn btn-success my-2 my-sm-0">Start for Free</a>
+        </form>
+        {% endif %}
+      </div>
+    </nav>
+
+    <header class="bg-primary text-white">
+      <div class="container text-center">
+        <h1>Empower Donors, Impact Campaigns, Advance Politics</h1>
+        <button class="btn btn-success btn-lg my-2 my-sm-0" type="submit">Start for Free</button>
+      </div>
+    </header>
+
+    <!-- Quick Overview -->
+    <section class="features-icons bg-light text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 text-center">
+              <div class="features-icons-icon d-flex">
+                <i class="fas fa-donate m-auto"></i>
+              </div>
+              <h3>Effecive Donations</h3>
+              <p class="lead mb-0">Our platform makes donations fast, secure, and meaningful</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="fas fa-hand-holding-usd m-auto  "></i>
+              </div>
+              <h3>Empower Donors</h3>
+              <p class="lead mb-0">Make donors feel valued and gain key insights into what they care about</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="fas fa-chart-area m-auto"></i>
+              </div>
+              <h3>Smart Analytics</h3>
+              <p class="lead mb-0">Data driven insights help you optimize your campaign</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="fas fa-chart-area m-auto"></i>
+              </div>
+              <h3>Easily Optimized</h3>
+              <p class="lead mb-0">Customize donation pages that are beautiful on all devices</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>About this page</h2>
+            <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+            <ul>
+              <li>Clickable nav links that smooth scroll to page sections</li>
+              <li>Responsive behavior when clicking nav links perfect for a one page website</li>
+              <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
+              <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" style="background-color: red;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Services we offer</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card text-white bg-info mb-3 mx-auto" style="max-width: 18rem; min-height: 20rem">
+              <div class="card-header"><h3><b>Simple Pricing</b></h3></div>
+              <div class="card-body">
+                <h5 class="card-title">3% + 30¢ per donation</h5>
+                <p class="card-text">No Hidden Fees. No Monthly Fees. No Markups</p>
+                <p class="card-text">Our industry low standa
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-3 mx-auto">
+            <div class="card text-white bg-info mb-3 mx-auto" style="max-width: 18rem; min-height: 20rem">
+              <div class="card-header"><h3><b>Trusted Security</b></h3></div>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <div class="al">
+                    <img src="{% static "images/powered_by_stripe.png" %}" class="center-block"alt="">
+                  </div>
+                </h5>
+                <p class="card-text">Our donation platform runs on stripe, the most secure platform on earth. All credit card information is handled by stripe
+                , which is PCI_Compliant</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-3 mx-auto">
+            <div class="card text-white bg-info mb-3 mx-auto" style="max-width: 18rem; min-height: 20rem">
+              <div class="card-header"><h3><b>Simple Pricing</b></h3></div>
+              <div class="card-body">
+                <h5 class="card-title">4% + 30¢ per donation</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; PeoplePAC 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <!-- Custom JavaScript -->
+    <script  type="text/javascript" src="{% static "/js/scrolling-nav.js" %}"></script>
+    <!-- <script type="text/javascript" src ="scrolling-nav.js"> -->
+
+    </script>
+  </body>
+
+</html>
